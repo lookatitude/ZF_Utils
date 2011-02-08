@@ -9,56 +9,33 @@
 class Look_StringUtils {
 	const HAS_TO_BE_STRING = 'HAS_TO_BE_STRING';
 	
-	
-	
 	/**
-	 * takes a string and replace all special characters
-	 * with a simple char, so "ç" will become "c"
 	 * @param string $string
 	 * @return string
 	 */
-	public static function normalize($string)
+	public static function normalize(string $string)
 	{
-		try {
-			is_string($string);
-		} catch (Exception $e) {
-			return self::HAS_TO_BE_STRING;
-		}
 		$s_pattern = '~&([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i';
 		return preg_replace($s_pattern, '$1', htmlentities($string, ENT_QUOTES));
 	}
 	
 	/**
-	 * Replaces a word with another word in a given text
 	 * @param String $word
 	 * @param string $replacement
 	 * @param string $text
 	 * @return string
 	 */
-	public static function word_replace($word, $replacement, $text) 
+	public static function word_replace(string $word, string $replacement, string $text) 
 	{ 
-		try {
-			is_string($word);
-			is_string($replacement);
-			is_string($text);
-		} catch (Exception $e) {
-			return self::HAS_TO_BE_STRING;
-		}
-    	return preg_replace('/[a-zA-Z]+/e', '\'\0\' == \'' . $word . '\' ? \'' . $replacement . '\': \'\0\';', $text); 
+		return preg_replace('/[a-zA-Z]+/e', '\'\0\' == \'' . $word . '\' ? \'' . $replacement . '\': \'\0\';', $text); 
 	} 
 	
 	/**
-	 * Takes a string and makes it camel case.
 	 * @param string $string
 	 * @return string
 	 */
-	public static function camelize($string)
+	public static function camelize(string $string)
 	{
-		try {
-			is_string($string);
-		} catch (Exception $e) {
-			return self::HAS_TO_BE_STRING;
-		}
 		$string = 'x'.strtolower(trim($string));
 
 		$string = ucwords(preg_replace('/[\s_]+/', ' ', $string));
@@ -67,18 +44,12 @@ class Look_StringUtils {
 	}
 	
 	/**
-	 * Takes a string and repeats it a number of times
 	 * @param string $string
 	 * @param integer $num
 	 * @return string
 	 */
-	public static function repeater($string, $num = 1)
+	public static function repeater(string $string, int $num = 1)
 	{
-		try {
-			is_string($string);
-		} catch (Exception $e) {
-			return self::HAS_TO_BE_STRING;
-		}
 		return (($num > 0) ? str_repeat($string, $num) : '');
 	}
 	

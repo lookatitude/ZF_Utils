@@ -1,0 +1,22 @@
+ZF_Utils
+
+This repository serves to store a series of classes to use with Zend framework 1.x.
+
+In the future i'll check for compatibility with version 2.
+
+/******************************************************************/
+ *  StringUtils
+ /******************************************************************/
+ 
+ This class is a set of tools i offen use when working with strings.
+ This class can be used out of Zend Framework as well.
+ 
+ USAGE:
+ 
+ $test = new Look_StringUtils();
+ 
+ $string = "i deal with strings";
+ 
+ $test->nderscore($string);
+ 
+ //output will be: i_deal_with_strings

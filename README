@@ -17,6 +17,29 @@ In the future i'll check for compatibility with version 2.
  
  $string = "i deal with strings";
  
- $test->nderscore($string);
+ $test->underscore($string);
  
  //output will be: i_deal_with_strings
+ 
+ String methods avaliable:
+ 
+ * normalize
+ normalize's text for use in HTML, example: "olá mãe" will become "ol&aacute; m&atilde;e"
+ 
+ * word_replace
+ Replaces a word for another in a given string
+ 
+ * camelize
+ Take a string remove spaces and join the words as CamelCase.
+ 
+ * repeater
+ repeats a string X number of times
+ 
+ * underscore
+ Takes a string and replace spaces with underscore
+ 
+ * humanize
+ Takes multiple words separated by underscores and adds spaces between them. Each word is capitalized.
+ 
+ * Truncate 
+ Cuts a string to a given length and adds ... at the end

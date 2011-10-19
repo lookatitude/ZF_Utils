@@ -10,6 +10,8 @@ class Look_StringUtils {
 	const HAS_TO_BE_STRING = 'HAS_TO_BE_STRING';
 	
 	/**
+	 * normalize's text for use in HTML,
+	 * example: "olá mãe" will become "ol&aacute; m&atilde;e"
 	 * @param string $string
 	 * @return string
 	 */
@@ -20,6 +22,7 @@ class Look_StringUtils {
 	}
 	
 	/**
+	 * Replaces a word for another in a given string
 	 * @param String $word
 	 * @param string $replacement
 	 * @param string $text
@@ -31,6 +34,7 @@ class Look_StringUtils {
 	} 
 	
 	/**
+	 * Take a string remove spaces and join the words as CamelCase.
 	 * @param string $string
 	 * @return string
 	 */
@@ -44,6 +48,7 @@ class Look_StringUtils {
 	}
 	
 	/**
+	 * repeats a string X number of times
 	 * @param string $string
 	 * @param integer $num
 	 * @return string
